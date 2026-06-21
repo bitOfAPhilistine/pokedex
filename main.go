@@ -26,10 +26,13 @@ func main() {
 		scanner.Scan()
 
 		inputFields := cleanInput(scanner.Text())
-		if inputFields[0] == "quit" {
-			running = false
-			break
+		if len(inputFields) == 0 {
+			continue
+		} else {
+			err := command(inputFields[0])
+			if err != nil {
+				fmt.Println(err)
+			}
 		}
-		fmt.Println("Your command was:", inputFields[0])
 	}
 }
