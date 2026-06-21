@@ -21,17 +21,15 @@ func main() {
     scanner := bufio.NewScanner(os.Stdin)
 
 	for running {
-		fmt.Println("Pokedex > ")
+		fmt.Print("Pokedex > ")
 
-		var input string
-		for scanner.Scan() {}
-		input = scanner.Text()
+		scanner.Scan()
 
-		inputFields := cleanInput(input)
+		inputFields := cleanInput(scanner.Text())
 		if inputFields[0] == "quit" {
 			running = false
 			break
 		}
-		fmt.Println(inputFields[0])
+		fmt.Println("Your command was:", inputFields[0])
 	}
 }
