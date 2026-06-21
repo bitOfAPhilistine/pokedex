@@ -1,2 +1,3 @@
 pokedex
 *.log
+*_test.go

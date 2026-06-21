@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"bufio"
 	"os"
+	"github.com/bitofaphilistine/pokedex/internal/commands"
 )
 
 
@@ -29,7 +30,7 @@ func main() {
 		if len(inputFields) == 0 {
 			continue
 		} else {
-			err := command(inputFields[0])
+			err := commands.Command(inputFields[0], inputFields[1:]...)
 			if err != nil {
 				fmt.Println(err)
 			}
